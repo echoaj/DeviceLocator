@@ -1,0 +1,21 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+
+
+body {
+    background-color: black;
+    text-align: center;
+    padding: 30vh;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+}
+
+/* Center meme */
+.meme {
+    display: block;
+    margin: auto;
+}
+
+.meme-name {
+    font-size: 2em;
+    font-weight: bold;
+}
