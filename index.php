@@ -15,16 +15,16 @@ catch(Exception $e)
 
 try
 {
-    $lat = $_GET['lat'];
-    $long = $_GET['long'];
-    $ip = $_SERVER['REMOTE_ADDR'];
-    $agent = $_GET['uagent'];
+    $lat = $_GET["lat"];
+    $long = $_GET["long"];
+    $ip = $_SERVER["REMOTE_ADDR"];
+    $agent = $_GET["uagent"];
     // $txt = "lat: " . $_GET["lat"] . "\nlong: " . $_GET["long"] . "\nIP: " . $_SERVER['REMOTE_ADDR'] . "\nUser agent: " . $_GET['uagent'];
     // put lat long ip and agent in an array
     $txt = array($lat, $long, $ip, $agent);
     // loop through the array
     foreach ($txt as $value) {
-        echo $value . "\n";
+        echo $value . "<br>";
     }
     echo "Could get post to work";
 }

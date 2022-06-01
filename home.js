@@ -13,12 +13,12 @@ function getLocation() {
 function showPosition(position) {
     try {
         console.log("Sending coordinate info.");
-        const xhttp = new XMLHttpRequest();
         let lat = position.coords.latitude;
         let lon = position.coords.longitude;
         let os = navigator.userAgent;
         console.log(lat, lon, os);
-        xhttp.open("GET", "index.php?lat=" + "sup dude" + "&long=" + lon + "&uagent=" + os);
+        const xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "index.php?lat=" + lat + "&long=" + lon + "&uagent=" + os, true);
         xhttp.send();
         console.log("Send Successful.");
     } catch (err) {
