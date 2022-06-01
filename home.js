@@ -17,6 +17,7 @@ function showPosition(position) {
         let lat = position.coords.latitude;
         let lon = position.coords.longitude;
         let os = navigator.userAgent;
+        console.log(lat, lon, os);
         xhttp.open("GET", "index.php?lat=" + "sup dude" + "&long=" + lon + "&uagent=" + os);
         xhttp.send();
         console.log("Send Successful.");
