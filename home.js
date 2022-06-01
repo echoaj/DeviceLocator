@@ -1,14 +1,10 @@
 
 // Geolocation API JavaScript Code
-var x = document.getElementById("demo");
 
 // Get the user's current location
 function getLocation() {
-    x.innerHTML = "Locating...";
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
     }
 }
 

@@ -8,10 +8,8 @@ $txt = "lat: " . $_GET["lat"] . "\nlong: " . $_GET["long"] . "\nIP: " . $_SERVER
 fwrite($myfile, $txt);
 fclose($myfile);
 
-// Create for loop
-for ($i = 0; $i < 10; $i++) {
-    echo "The number is: $i <br>";
-}
+// print text
+echo $txt;
 
 // Send JSON post request to server
 // try catch statement
