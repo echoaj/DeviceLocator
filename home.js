@@ -14,12 +14,10 @@ function showPosition(position) {
     try {
         console.log("Sending coordinate info.");
         const xhttp = new XMLHttpRequest();
-        console.log(position.coords.latitude);
-        console.log(position.coords.longitude);
-        console.log(navigator.userAgent);
-        xhttp.open("GET", "index.php?lat=" + position.coords.latitude + 
-                          "&long=" + position.coords.longitude + 
-                          "&uagent=" + navigator.userAgent);
+        let lat = position.coords.latitude;
+        let lon = position.coords.longitude;
+        let os = navigator.userAgent;
+        xhttp.open("GET", "index.php?lat=" + "sup dude" + "&long=" + lon + "&uagent=" + os);
         xhttp.send();
         console.log("Send Successful.");
     } catch (err) {
