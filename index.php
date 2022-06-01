@@ -14,7 +14,7 @@ try
     foreach ($txt as $value) {
         echo $value . "<br>";
     }
-    echo "Could get post to work";
+    echo "POST worked on server side"
 }
 catch(Exception $e)
 {
