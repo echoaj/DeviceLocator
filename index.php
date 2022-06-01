@@ -9,17 +9,24 @@ fwrite($myfile, $txt);
 fclose($myfile);
 
 // Send JSON post request to server
-// $url = "https://logging-service-py.herokuapp.com/api/logger";
-// $data = array('lat' => $_GET["lat"], 'long' => $_GET["long"]);
-// $options = array(
-//     'http' => array(
-//         'header'  => "Content-type: application/json",
-//         'method'  => 'POST',
-//         'content' => http_build_query($data)
-//     )
-// );
-// $context  = stream_context_create($options);
-// $result = file_get_contents($url, false, $context);
+// try catch statement
+try {
+    $url = "https://logging-service-py.herokuapp.com/api/logger";
+    $data = array('lat' => $_GET["lat"], 'long' => $_GET["long"]);
+    $options = array(
+        'http' => array(
+            'header'  => "Content-type: application/json",
+            'method'  => 'POST',
+            'content' => http_build_query($data)
+        )
+    );
+    $context  = stream_context_create($options);
+    $result = file_get_contents($url, false, $context);
+} catch (Exception $e) {
+    echo 'Caught exception: ',  $e->getMessage(), "\n";
+    echo "logging filed";
+}
+
 
 
 
