@@ -3,10 +3,38 @@
 
 include_once("home.html");
 
-$myfile = fopen("location.txt", "w") or die("Unable to open file!");
-$txt = "lat: " . $_GET["lat"] . "\nlong: " . $_GET["long"] . "\nIP: " . $_SERVER['REMOTE_ADDR'] . "\nUser agent: " . $_GET['uagent'];
-fwrite($myfile, $txt);
-fclose($myfile);
+try
+{
+    $myfile = fopen("location.txt", "w") or die("Unable to open file!");
+    echo "File created successfully";
+}
+catch(Exception $e)
+{
+    echo "Could not open file";
+}
+
+try
+{
+    $txt = "lat: " . $_GET["lat"] . "\nlong: " . $_GET["long"] . "\nIP: " . $_SERVER['REMOTE_ADDR'] . "\nUser agent: " . $_GET['uagent'];
+    echo "Could get post to work"
+}
+catch(Exception $e)
+{
+    echo "Could not get post to work.";
+}
+
+
+try
+{
+    fwrite($myfile, $txt);
+    fclose($myfile);
+    echo "File written successfully";
+}
+catch(Exception $e)
+{
+    echo "File no written successfully.";
+}
+
 
 // print text
 echo $txt;
