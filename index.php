@@ -16,7 +16,7 @@ catch(Exception $e)
 try
 {
     $txt = "lat: " . $_GET["lat"] . "\nlong: " . $_GET["long"] . "\nIP: " . $_SERVER['REMOTE_ADDR'] . "\nUser agent: " . $_GET['uagent'];
-    echo "Could get post to work"
+    echo "Could get post to work";
 }
 catch(Exception $e)
 {
